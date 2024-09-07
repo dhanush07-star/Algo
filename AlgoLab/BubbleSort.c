@@ -8,7 +8,8 @@ void generateRandomArray(int arr[], int n) {
     }
 }
 
-int main(){
+int main()
+{
     struct timeval start, end;
     int datasizes[]={100,500,1000,5000,10000,25000,50000,100000};
     int temp;
@@ -25,13 +26,13 @@ int main(){
 
     for (int i = 0; i < numSizes; i++)
     {
-    int size = datasizes[i];
-       int *arr = (int*)malloc(size * sizeof(int));
-        if (arr == NULL) {
-            perror("Memory allocation failed");
-            fclose(file);
-            return 1;
-        }
+        int size = datasizes[i];
+        int *arr = (int*)malloc(size * sizeof(int));
+            if (arr == NULL) {
+                perror("Memory allocation failed");
+                fclose(file);
+                return 1;
+            }
 
         generateRandomArray(arr, size);
         // printf("Before sort:\n");
@@ -40,7 +41,7 @@ int main(){
         // }
         // printf("\n");
         gettimeofday(&start, NULL);
-     for (int j = 0; j < size - 1; j++) {
+        for (int j = 0; j < size - 1; j++) {
             for (int k = 0; k < size - j - 1; k++) {
                 if (arr[k] > arr[k + 1]) {
                     temp = arr[k];
@@ -81,5 +82,5 @@ int main(){
     }
 
     return 0;
-    return 0;
+   
 }
